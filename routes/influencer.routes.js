@@ -3,7 +3,7 @@ const router = express.Router()
 
 const Influ = require('./../models/influ.model')
 
- 
+ //Mostrar todas las influencers
 router.get('/', (req, res) => {
 
     Influ
@@ -12,6 +12,16 @@ router.get('/', (req, res) => {
         .catch (err => console.log (err))
 })
 
+
+router.get('/crear-influencer', (req, res) => res.send('heheh'))
+
+
+
+
+
+
+
+//Mostrar los detalles de cada influencer
 router.get('/:id', (req, res) => {
 
     const influId = req.params.id
