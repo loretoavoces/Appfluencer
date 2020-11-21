@@ -3,7 +3,9 @@ const router = express.Router()
 
 const Influ = require('./../models/influ.model')
 
- //Mostrar todas las influencers
+
+//Mostrar todas las influencers
+ 
 router.get('/', (req, res) => {
 
     Influ
@@ -13,15 +15,63 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/crear-influencer', (req, res) => res.send('heheh'))
+//Crear nueva influencer
+
+router.get('/crear-influencer', (req, res) => res.render('influencers/new-influ'))
+
+router.post('/crear-influencer', (req, res) => {
+
+    const { name, instagram, followers, agency, description } = req.body
+
+    Influ
+        .create(req.body)
+        .then(() => res.redirect('/influencer'))
+        .catch(err => console.log(err))
+
+})
 
 
+//Editar influencer
+
+router.get('/editar-influencer', (req, res) => {
+
+    Influ
+        .findById(req.query.id)
+        .then(influInfo => res.render('influencers/edit-influ', influInfo))
+        .catch(err => console.log(err))         
+    
+})
+
+router.post('/editar-influencer', (req, res) => {
+
+    const influId = req.query.id
+
+    const { name, instagram, followers, agency, description } = req.body
+
+    Influ
+        .findByIdAndUpdate(influId, { name, instagram, followers, agency, description })
+        .then(() => res.redirect('/influencer'))
+        .catch(err => console.log(err))   
+})
 
 
+//Eliminar influencer
+
+router.get('/eliminar-influencer', (req, res) => {
 
 
+    const influId = req.query.id
 
-//Mostrar los detalles de cada influencer
+    Influ
+        .findByIdAndDelete(influId)
+        .then(() => res.redirect('/influencer'))
+        .catch(err => console.log(err))
+
+})
+
+
+//Detalle de cada influencer
+
 router.get('/:id', (req, res) => {
 
     const influId = req.params.id

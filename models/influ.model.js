@@ -7,10 +7,6 @@ const influSchema = new Schema({
         type: String,
         require: true
     },
-    endpoint:  {
-        type: String,
-        require: true
-    },
     image:  {
         type: String,
         require: true
