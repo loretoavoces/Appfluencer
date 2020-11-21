@@ -7,7 +7,6 @@ mongoose.connect(`mongodb://localhost/${dbName}`)
 const influ = [
     {
         name: "Dulceida",
-        endpoint: "dulceida",
         image: "https://www.timejust.es/wp-content/uploads/2019/10/dulceida-feature-5.jpg", 
         instagram: "https://www.instagram.com/dulceida/?hl=es",
         followers: "2,8m",
@@ -17,7 +16,6 @@ const influ = [
 
     {
         name: "Maria Pombo",
-        endpoint: "maria-pombo",
         image: "https://aws.glamour.es/prod/designs/v1/assets/original/656127.jpg", 
         instagram: "https://www.instagram.com/mariapombo/?hl=es",
         followers: "1,6m",
@@ -27,7 +25,6 @@ const influ = [
 
     {
         name: "Grace Villarreal",
-        endpoint: "grace-villarreal",
         image: "https://arc-photo-larazon.s3.amazonaws.com/eu-central-1-prod/public/EBKVU4UA2BFL7DHXELDJIVWLXA.jpg", 
         instagram: "https://www.instagram.com/gracyvillarreal/?hl=es",
         followers: "619K",

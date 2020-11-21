@@ -1,1 +1,17 @@
-<h1>hiiii</h1>
+<div class="container coasters-index">
+
+    <h1 style="font-weight: 100">{{name}}</h1>
+
+    <p>{{description}}</p>
+    <p><strong>Instagram: <a href="{{instagram}}"></a></strong> | <strong>Followers: </strong> {{followers}}</p>
+
+    {{!-- Botón para ADMIN --}}
+    <a href="/influencer/eliminar-influencer?id={{id}}" class="btn btn-dark">Eliminar</a>
+
+    <a href="/influencer" class="btn btn-dark">Volver</a>
+
+    <hr>
+    <img src="{{image}}">
+
+
+</div>

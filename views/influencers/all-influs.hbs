@@ -1,22 +1,20 @@
 
 <div class="container">
 
-<h2>LISTA DE TODAS LAS INFLUENCERS</h2>
+<h2>Lista de Influencers</h2>
 
     <br>
 
     <ul>
         {{#each allInflus}} 
             <a href="/influencer/{{id}}"><h3>{{name}}</h3></a>
-            {{!-- [<small><a href="/celebrities/edit-celebrity?id={{_id}}">edit celebrity</a></small>]
-            [<small> <a href="/celebrities/delete-celebrity?id={{_id}}">delete celebrity</a> </small>] --}}
-       
+            <small><a href="/influencer/editar-influencer?id={{id}}">editar</a></small>
         {{/each}}
 
         <br>
 
 
-        {{!-- <a href="/influencers/new-influ" class="btn btn-dark">Crear nueva influencer</a> --}}
+        <a href="/influencer/crear-influencer" class="btn btn-dark">Crear nueva influencer</a>
     </ul>
 
 </div>
