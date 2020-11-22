@@ -4,4 +4,5 @@ module.exports = app => {
     app.use('/', require('./base.routes.js'))
     app.use('/', require('./auth.routes.js'))
     app.use('/influencer', require('./influencer.routes.js'))
+    app.use('/api', require('./api.routes.js'))
 }

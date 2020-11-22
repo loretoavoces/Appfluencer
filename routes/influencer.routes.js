@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const Influ = require('./../models/influ.model')
 
 
@@ -68,6 +67,10 @@ router.get('/eliminar-influencer', (req, res) => {
         .catch(err => console.log(err))
 
 })
+
+
+router.get('/map', (req, res) => res.render('agency-map'))
+
 
 
 //Detalle de cada influencer

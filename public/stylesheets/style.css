@@ -7,4 +7,11 @@ img {
 h1, h2, h3 {
   padding-top: 50px; }
 
+.navbar {
+  margin-bottom: 40px; }
+
+#agencyMap {
+  height: 500px;
+  background-color: red; }
+
 /*# sourceMappingURL=style.css.map */
