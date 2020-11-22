@@ -1,21 +1,26 @@
-
 <div class="container">
 
-<h2>Lista de Influencers</h2>
+    <h2>Influencers</h2>
 
     <br>
+    <div class="row">
+        {{#each allInflus}}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
+                        alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card'scontent.</p>
 
-    <ul>
-        {{#each allInflus}} 
-            <a href="/influencer/{{id}}"><h3>{{name}}</h3></a>
-            <small><a href="/influencer/editar-influencer?id={{id}}">editar</a></small>
+                    {{!-- {{#if isAdmin}} --}}
+                    <a href="/influencer/editar-influencer?id={{id}}" class="btn btn-dark btn-sm">Editar</a>
+                    {{!-- {{/if}} --}}
+                </div>
+            </div>
+        </div>
         {{/each}}
 
-        <br>
-
-
-        <a href="/influencer/crear-influencer" class="btn btn-dark">Crear nueva influencer</a>
-        
-    </ul>
-
+    </div>
 </div>
