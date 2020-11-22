@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-require('mongoose-type-url')
 const Schema = mongoose.Schema
 
 const influSchema = new Schema({
@@ -11,7 +10,10 @@ const influSchema = new Schema({
         type: String,
         require: true
     },
-    instagram: mongoose.SchemaTypes.Url,
+    instagram: {
+        type: String,
+        require: true
+    },
     followers:  {
         type: String,
         require: true
