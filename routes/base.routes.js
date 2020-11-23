@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+
 //Passport
 
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
@@ -8,6 +9,7 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 
 // Base Endpoints
 router.get('/', (req, res) => res.render('index'))
+router.get('/mapa', (req, res) => res.render('agency-map'))
 
 
 router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => res.render('profile', {

@@ -51,7 +51,7 @@ const influ = [
         agency: "In Management Agency",
         location: {
             type: "Point",
-            coordinates: [40.447297, -3.669838]
+            coordinates: [40.454111, -3.680877]
         },
         description: "La badalonesa Aida Domenech es nuestra influencer más internacional. Con casi tres millones de seguidores en Instagram (2,8m) y algo más de dos en su canal de YouTube (2,2M), tiene marca propia de ropa (y perfumes, pintalabios o joyas) y hasta un festival de música a su nombre (con moda y gastronetas), el Dulceweekend, cuya quinta edición no pudo celebrarse por la pandemia. Ha escrito un libro (Dulceida. Guía de estilo, en Cúpula, colección del grupo Planeta) y tiene su propia agencia de representación de influencers. Y es abanderada de los derechos LGTBI"
     },
@@ -62,6 +62,10 @@ const influ = [
         instagram: "https://www.instagram.com/mariapombo/?hl=es",
         followers: "1.6m",
         agency: "Soy Olivia",
+        location: {
+            type: "Point",
+            coordinates: [40.447297, -3.669838]
+        },
         description: "Lleva la comunicación en la sangre (su árbol genealógico está lleno de periodistas de renombre y escritores, como su tatarabuela Concha Espina) así que no es extraño que su crecimiento como influencer esté siendo exponencial. Además de apoyar marcas como Agatha Paris, Mango o Springfield, tiene sus propias firmas de ropa, Tipi Tent y Name The Brand, y ha organizado también el primer festival de reguetón de España, Suave Fest. Su simpatía y belleza natural son parte fundamental de su encanto."
     },
 
@@ -70,7 +74,11 @@ const influ = [
         image: "https://arc-photo-larazon.s3.amazonaws.com/eu-central-1-prod/public/EBKVU4UA2BFL7DHXELDJIVWLXA.jpg", 
         instagram: "https://www.instagram.com/gracyvillarreal/?hl=es",
         followers: "619k",
-        agency: "Soy Olivia", 
+        agency: "Soy Olivia",
+        location: {
+            type: "Point",
+            coordinates: [40.447297, -3.669838]
+        },
 
     },
     {
@@ -79,6 +87,10 @@ const influ = [
         instagram: "https://www.instagram.com/riumbaumarta/?hl=es",
         followers: "605k",
         agency: "Pop Cont", 
+        location: {
+            type: "Point",
+            coordinates: [40.422370, -3.708689]
+        },
         description: "Marta es diplomada en la carrera de Empresariales, licenciada en Publicidad y Relaciones públicas y también cuenta con un máster relacionado con marketing y comunicación de moda. Precisamente, a raíz de este máster fundó en 2015 su propia marca de moda conocida como Mus&bombon colección. Además, durante el máster fue cuando debutó en Youtube. Siguiendo vídeos de otras chicas españolas y americanas le surgió la idea. A partir de entonces, Marta nunca ha dejado de subir vídeos a su canal. Se declara fan de Claire Marshall y nunca se pierde sus vídeos, aunque es consumidora de muchos otros canales."
     },
     {
@@ -86,7 +98,11 @@ const influ = [
         image: "https://www.arantxa-canadas.com/wp-content/uploads/2020/05/DSC07606-683x1024.jpg", 
         instagram: "https://www.instagram.com/riumbaumarta/?hl=es",
         followers: "165k",
-        agency: "Soy Olivia", 
+        agency: "Soy Olivia",
+        location: {
+            type: "Point",
+            coordinates: [40.447297, -3.669838]
+        },
         description: "Arantxa es una chica 100% inspiradora. Además de subir videos a su canal de YouTube semanalmente e inspirar a cientos de personas con su contenido, Arantxa es diseñadora de moda y tiene su propia marca: Tulle Rouge."
     },
     {
@@ -94,7 +110,11 @@ const influ = [
         image: "https://arc-photo-larazon.s3.amazonaws.com/eu-central-1-prod/public/7C5VD2UGJBCL3JOEYEX4OBXHLM.jpg", 
         instagram: "https://www.instagram.com/sarabace2/?hl=es",
         followers: "374k",
-        agency: "Soy Olivia", 
+        agency: "Soy Olivia",
+        location: {
+            type: "Point",
+            coordinates: [40.447297, -3.669838]
+        },
         description: "Ser buen comunicador, crear contenidos que gusten al público y tener constancia en las redes sociales son tres de las características que definen a la 'influencer' sara baceiredo, una joven vitoriana que además acaba de sacar su propia línea de complementos: It's Lava."
     },
     {
@@ -103,6 +123,10 @@ const influ = [
         instagram: "https://www.instagram.com/martalozanop/?hl=es",
         followers: "878k",
         agency: "Espectalium", 
+        location: {
+            type: "Point",
+            coordinates: [41.396307, 2.151293]
+        },
         description: "Valenciana de 1995, comenzó su carrera de modelo con 16 años, pero no tenía aspiraciones concretas en el ámbito de la moda. De hecho, comenzó a estudiar derecho… pero Instagram se cruzó en su camino y se ha convertido en referente de moda, colaborando con marcas como Bulgari, Missoni, Rat & Boa, Louis Vuitton, Carolina Herrera, Versace… o Desigual. Y ha ampliado su campo de acción protagonizando reportajes en revistas de las de toda la vida…"
     },
     {
@@ -111,10 +135,38 @@ const influ = [
         instagram: "https://www.instagram.com/rocio0sorno/?hl=es",
         followers: "1.3m",
         agency: "Go Talents", 
+        location: {
+            type: "Point",
+            coordinates: [40.453666, -3.680641]
+        },
         description: "La influencer sevillana estudió ingeniería técnica agrícola. Terminó la carrera pero no ha ejercido, ya que después de su Erasmus en Francia comenzó a estudiar patronaje industrial y moda y comenzó a usar Instagram para mostrar sus diseños. En la actualidad es propietaria de la firma de moda que lleva su nombre y sus más de un millón de seguidoras la siguen para que les inspire con sus trajes de “invitada” de fiesta y noche o vestidos de novia (aunque también de ropa más informal), de la que ella es su principal modelo."
     },
-
+    {
+        name: "Mery Turiel",
+        image: "https://img3.stilo.es/fb/2c/87/mery_turiel-650x810.jpg", 
+        instagram: "https://www.instagram.com/meryturiel/?hl=es",
+        followers: "885k",
+        agency: "Go Talents", 
+        location: {
+            type: "Point",
+            coordinates: [40.453666, -3.680641]
+        },
+        description: "La influencer María Turiel se ha convertido en un referente de estilo y creadora de tendencias capaz de aumentar la venta de productos y fortalecer las campañas de moda cuando salen a la calle. Lleva a sus espaldas centenas de seguidores en Instagram, la red social más top del momento y con vistas a crecer juntas a medida que pase el tiempo. Mery Turiel ha creado estilo propio y ha hecho de la moda una forma de vida donde la moda lo es todo. Quizás con esta frase pienses que es algo artificial pero si te paras a escucharla, cambias de opinión."
+    },
+    {
+        name: "María Fernández-Rubíes Soler",
+        image: "https://fashion.hola.com/imagenes/belleza/2020040269318/maria-fernandez-rubies-trucos-pelo-brillante/0-299-974/maria-frubies-rosa-a.jpg", 
+        instagram: "https://www.instagram.com/mariafrubies/?hl=es",
+        followers: "660k",
+        agency: "Soy Olivia",
+        location: {
+            type: "Point",
+            coordinates: [40.447297, -3.669838]
+        },
+        description: "La madrileña descubrió Instagram en el curso académico 2013-2014, durante su ERASMUS en la ciudad sueca de Linköpings, para compartir con sus amigos españoles los sitios que visitaba y las comidas tan distintas que probaba. Licenciada en ADE bilingüe por CUNEF y máster en gestión de empresas de moda y lujo por el Istituto Marangoni de Milán, ha sido gerente de relaciones públicas en la agencia de representación de influencers Soy Olivia, pero en la actualidad se dedica en cuerpo y alma a su perfil personal. Es embajadora de Estée Lauder y ha colaborado en la campaña de lanzamiento del nuevo Mercedes-Benz GLA."
+    },
     
+
 ]
 
 Influ
