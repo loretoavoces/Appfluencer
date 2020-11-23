@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  color: black; }
 
 img {
   width: 70%;
@@ -11,15 +12,15 @@ img {
   height: 100%;
   object-fit: cover; }
 
-h1, h2, h3, h4 {
-  font-weight: 100;
-  padding-top: 50px; }
-
 .navbar {
-  margin-bottom: 40px; }
+  margin-bottom: 50px; }
 
 #agencyMap {
   height: 500px;
   background-color: red; }
+
+h1, h2, h3, h4 {
+  font-weight: 100;
+  padding-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */
