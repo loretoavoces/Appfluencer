@@ -6,7 +6,7 @@ body {
 
 img {
   width: 70%;
-  padding-top: 50px;
+  // padding-top: 50px;
 }
 
 .img-card {
@@ -19,6 +19,24 @@ img {
   margin-bottom: 50px;
 }
 
+nav.navbar{
+  background-color: black;
+  height: 80px;
+  font-size: 18px;
+  padding-right: 30px;
+}
+
+.btn {
+  background-color: black;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 20px
+}
+
+
 
 #agencyMap{
   height: 500px;
@@ -29,4 +47,11 @@ h1, h2, h3, h4 {
   font-weight: 100;
   padding-top: 50px;
 }
+
+h6{
+  font-weight: bold;
+}
+
+
+
 

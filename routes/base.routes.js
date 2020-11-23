@@ -11,14 +11,13 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 router.get('/', (req, res) => res.render('index'))
 router.get('/mapa', (req, res) => res.render('agency-map'))
 
-
+//ADMIN Y USER ENTRAN AL PERFIL
 router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => res.render('profile', {
     user: req.user,
     isAdmin: req.user.role.includes('ADMIN'),
     isUser: req.user.role.includes('USER'),
     
 }))
-
 
 
 

@@ -22,12 +22,6 @@ const influSchema = new Schema({
         type: String,
         enum: ["Go Talents", "Soy Olivia", "Miranda Talents", "Pop Cont", "Espectalium", "In Management Agency"]
     },
-    location: {                 
-        type: {
-            type: String
-        },
-        coordinates: [Number]
-    },
     description:  {
         type: String,
         require: true
@@ -36,8 +30,7 @@ const influSchema = new Schema({
 }, {
     timestamps: true
 })
-
-influSchema.index({ location: '2dsphere' })      
+    
 const Influ = mongoose.model('Influ', influSchema)
 
 module.exports = Influ

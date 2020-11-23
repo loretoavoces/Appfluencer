@@ -9,7 +9,7 @@ function initApp() {
 function drawMap() {
     mapInstance = new google.maps.Map(
         document.querySelector('#agencyMap'),
-        { center: { lat: 40.415933, lng: -3.705167 }, zoom: 14, styles: mapStyles.retro }
+        { center: { lat: 40.437776, lng: -3.684804 }, zoom: 13, styles: mapStyles.retro }
     )
 }
 

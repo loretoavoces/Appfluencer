@@ -49,11 +49,17 @@ router.get('/inicio-sesion', (req, res) => res.render('auth/login'))
 
 
 router.post("/inicio-sesion", passport.authenticate("local", {
-    successRedirect: "/perfil",
-    failureRedirect: "/",
+    successRedirect: "/",
+    failureRedirect: "/registro",
     failureFlash: true,
     passReqToCallback: true
 }))
+
+// Cerrar sesión
+router.get('/cerrar-sesion', (req, res) => {
+    req.logout()
+    res.redirect("/")
+})
 
 
 

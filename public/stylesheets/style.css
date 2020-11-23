@@ -4,8 +4,7 @@ body {
   color: black; }
 
 img {
-  width: 70%;
-  padding-top: 50px; }
+  width: 70%; }
 
 .img-card {
   height: 400px;
@@ -14,6 +13,20 @@ img {
 .navbar {
   margin-bottom: 50px; }
 
+nav.navbar {
+  background-color: black;
+  height: 80px;
+  font-size: 18px;
+  padding-right: 30px; }
+
+.btn {
+  background-color: black; }
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 20px; }
+
 #agencyMap {
   height: 500px;
   background-color: red; }
@@ -21,5 +34,8 @@ img {
 h1, h2, h3, h4 {
   font-weight: 100;
   padding-top: 50px; }
+
+h6 {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

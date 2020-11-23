@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Influ = require('./../models/influ.model')
+const Agency = require('./../models/agency.model')
 
 // Endpoints
 // router.get('/', (req, res) => res.render('index'))
@@ -9,7 +9,7 @@ const Influ = require('./../models/influ.model')
 
 router.get('/agency', (req, res) => {
 
-    Influ 
+    Agency 
         .find()
         .then(agency => res.json(agency))
         .catch(err => next(err))
