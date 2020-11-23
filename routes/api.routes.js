@@ -7,7 +7,7 @@ const Influ = require('./../models/influ.model')
 // router.get('/', (req, res) => res.render('index'))
 
 
-router.get('/map', (req, res) => {
+router.get('/agency', (req, res) => {
 
     Influ 
         .find()

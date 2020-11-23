@@ -39,5 +39,5 @@ function drawMarkers(agency) {
         })
     })
 
-    mapInstance.setCenter({ lat: places[1].location.coordinates[0], lng: places[1].location.coordinates[1] })
+    // mapInstance.setCenter({ lat: agency[1].location.coordinates[0], lng: agency[1].location.coordinates[1] })
 }

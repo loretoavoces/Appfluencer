@@ -39,4 +39,5 @@ const influSchema = new Schema({
 
 influSchema.index({ location: '2dsphere' })      
 const Influ = mongoose.model('Influ', influSchema)
+
 module.exports = Influ

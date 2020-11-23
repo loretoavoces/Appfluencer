@@ -69,7 +69,9 @@ router.get('/eliminar-influencer', (req, res) => {
 })
 
 
-router.get('/map', (req, res) => res.render('agency-map'))
+//MAPA
+
+router.get('/mapa', (req, res) => res.render('agency-map'))
 
 
 
