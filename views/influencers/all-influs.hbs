@@ -1,26 +1,39 @@
 <div class="container">
 
-    <h2>Influencers</h2>
+    <h2>Nuestras Influencers</h2>
 
     <br>
+
     <div class="row">
         {{#each allInflus}}
+
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
                         alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card'scontent.</p>
+                    <p class="card-text"></p>
 
-                    {{!-- {{#if isAdmin}} --}}
-                    <a href="/influencer/editar-influencer?id={{id}}" class="btn btn-dark btn-sm">Editar</a>
-                    {{!-- {{/if}} --}}
+                    {{#if ../isAdmin}}
+
+                    <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
+                    <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
+
+                     {{/if}}
+
                 </div>
             </div>
         </div>
-        {{/each}}
 
+        {{/each}}
     </div>
+
+
+
+    {{#if isAdmin}}
+    <a href="/influencer/crear-influencer" class="btn btn-dark btn-sm">Crear influencer</a>
+    {{/if}}
+
+
 </div>

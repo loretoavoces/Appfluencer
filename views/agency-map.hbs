@@ -1,19 +1,44 @@
-
 <div class="container">
 
-    <h2>Agencias</h2>
+    <div class="row">
+
+        <div class="col-9">
+
+    
     <figure id="agencyMap"></figure>
 
-    <a href="/" class="btn btn-dark">Home</a>
+    </div>
+
+    <div class="col-3">
+
+        <h3>Agencias</h3>
+
+        {{#each allAgencies}}
+
+        <ul>
+                <strong><h6>{{name}}</h6></strong>
+                <p>{{street}}</p>
+
+                
+        </ul>
+
+
+         {{/each}}
+        
+    </div>
+
+    <a href="/" class="btn btn-dark">Volver a inicio</a>
 
 </div>
+
+</div> 
 
 
 {{!-- Scripts estáticos --}}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/styles.js"></script>
 <script src="/javascripts/agency-map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBItnPEnmNORPYuMbfQHxK_lD6RHlgl5eg
+<script src="https://maps.googleapis.com/maps/api/js?key=
 &callback=initApp"></script>
 
 

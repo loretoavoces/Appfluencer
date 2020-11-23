@@ -19,7 +19,7 @@ const userSchema = new Schema(
             enum: ['ADMIN', 'USER'],
             default: 'USER',
             require: true,
-    }
+        },
     },
     {
       timestamps: true

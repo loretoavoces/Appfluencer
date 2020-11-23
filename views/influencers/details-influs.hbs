@@ -9,17 +9,16 @@
             <p>{{description}}</p>
             <p><strong>Instagram: <a class="text-dark" href="{{instagram}}">{{name}}</a></strong> | <strong>Followers:
                 </strong> {{followers}}</p>
-                {{!-- <h5>Localización:</h5>
-                <p> {{location.coordinates.[0]}} </p>
-                <p>{{location.coordinates.[1]}} </p> --}}
+
 
 
             <hr>
 
-            <a href="/influencer" class="btn btn-dark">Volver</a>
-            {{!-- {{#if isAdmin}} --}}
-            <a href="/influencer/eliminar-influencer?id={{id}}" class="btn btn-dark">Eliminar</a>
-            {{!-- {{/if}} --}}
+            <a href="/influencer" class="btn text-white">Volver</a>
+            {{#if isAdmin}} 
+            <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white">Eliminar</a>
+            <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
+            {{/if}} 
 
         </div>
     </div>
