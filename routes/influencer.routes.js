@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const CDNupload = require('./../configs/cdn-upload.config')
+
 const Influ = require('./../models/influ.model')
 
 const Agency = require('./../models/agency.model')
@@ -27,14 +29,27 @@ router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) =>
 
 //Crear nueva influencer
 
-router.get('/crear-influencer', (req, res) => res.render('influencers/new-influ'))
+router.get('/crear-influencer', (req, res) => {
 
-router.post('/crear-influencer', (req, res) => {
+    Agency
+        .find()
+        .then(allTheAgencies => res.render('influencers/new-influ', { allTheAgencies }))
+        .catch(err => console.log(err))
+  
+})
 
-    const { name, instagram, followers, agency, description } = req.body
+router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
+
+    const { name, instagram, followers, agency, description, imageFile } = req.body
+
+    const imgFile = {
+        imageName: req.body.imageName,
+        path: req.file.path,
+        originalName: req.file.originalname
+    }
 
     Influ
-        .create(req.body)
+        .create({ name, instagram, followers, description, imageFile: imgFile, agency_id: agency } )
         .then(() => res.redirect('/influencer'))
         .catch(err => console.log(err))
 
@@ -45,11 +60,14 @@ router.post('/crear-influencer', (req, res) => {
 
 router.get('/editar-influencer', (req, res) => {
 
-    Influ
-        .findById(req.query.id)
-        .then(influInfo => res.render('influencers/edit-influ', influInfo))
-        .catch(err => console.log(err))         
+    const agencyPromise = Agency.findById(req.query.id)
+
+    const influPromise = Influ.find()
     
+    Promise.all([agencyPromise, influPromise])
+        .then(results =>
+             res.render('influencers/edit-influ', { agency: results[0], influ: results[1] }))
+        .catch(err => console.log(err))     
 })
 
 router.post('/editar-influencer', (req, res) => {
@@ -59,7 +77,7 @@ router.post('/editar-influencer', (req, res) => {
     const { name, instagram, followers, agency, description } = req.body
 
     Influ
-        .findByIdAndUpdate(influId, { name, instagram, followers, agency, description })
+        .findByIdAndUpdate(influId, { name, instagram, followers, description, agency_id: agency })
         .then(() => res.redirect('/influencer'))
         .catch(err => console.log(err))   
 })

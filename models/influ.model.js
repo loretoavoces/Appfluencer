@@ -8,7 +8,9 @@ const influSchema = new Schema({
     },
     image:  {
         type: String,
-        require: true
+        imageName: String,
+        path: String,
+        originalName: String
     },
     instagram: {
         type: String,

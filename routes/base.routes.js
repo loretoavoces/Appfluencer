@@ -1,5 +1,6 @@
 const express = require('express')
 const User = require('../models/user.model')
+const Influ = require('../models/influ.model')
 const router = express.Router()
 
 
@@ -40,18 +41,23 @@ router.get('/perfil/favoritas', ensureAuthenticated, (req, res) => {
 
 router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
 
-    const influId = req.params.id
-
-    const { id, favourites } = req.user
-    
-    let influFav = [...favourites]
-
-    let newFav = influFav.filter(elm => !(elm.includes(influId)))
+    const influId = req.query.id
 
     User
-        .findByIdAndUpdate({ id }, { favourites: newFav })
-        .then(() => res.redirect('auth/favourites'))
-        .catch(err => console.log(err))  
+        
+        .findById(influId)
+
+        .then(allFavsCreated => {
+
+            const favInflu = []
+            
+            allFavsCreated.forEach(elm => {
+                favInflu.push(Influ.findByIdAndUpdate(elm.influ, {$push:{influencer: elm._id}}))
+            })
+
+            return favInflu
+        })
+        .catch(err => console.log('Hubo un error,', err))
 })
 
 //Borrar de favoritas
