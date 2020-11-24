@@ -12,13 +12,18 @@
 
 
 
+            <form action="/perfil/favoritas/{{id}}" method="POST">
+            <a href="/perfil/favoritas" class="btn text-white">Añadir a favoritas</a>
+            </form>
+
+
             <hr>
 
             <a href="/influencer" class="btn text-white">Volver</a>
-            {{#if isAdmin}} 
+            {{#if isAdmin}}
             <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white">Eliminar</a>
             <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
-            {{/if}} 
+            {{/if}}
 
         </div>
     </div>

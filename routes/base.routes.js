@@ -1,4 +1,5 @@
 const express = require('express')
+const User = require('../models/user.model')
 const router = express.Router()
 
 
@@ -18,6 +19,42 @@ router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, r
     isUser: req.user.role.includes('USER'),
     
 }))
+
+
+
+
+//FAVORITAS
+//vista favoritas
+
+router.get('/perfil/favoritas', ensureAuthenticated, (req, res) => {
+    
+    const userId = req.user.id
+
+    User
+        .findById(userId)
+        .then(user => res.render('auth/favourites', user))
+        .catch(err => console.log(err))  
+})
+
+//Guardar favoritas
+
+router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
+
+    const influId = req.params.id
+
+    const { id, favourites } = req.user
+    
+    let influFav = [...favourites]
+
+    let newFav = influFav.filter(elm => !(elm.includes(influId)))
+
+    User
+        .findByIdAndUpdate({ id }, { favourites: newFav })
+        .then(() => res.redirect('auth/favourites'))
+        .catch(err => console.log(err))  
+})
+
+//Borrar de favoritas
 
 
 
