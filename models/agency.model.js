@@ -16,7 +16,10 @@ const agencySchema = new Schema({
         type: String,
         require: true
     },
-
+    influencer: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Influ'
+    }]
 }, {
     timestamps: true
 })

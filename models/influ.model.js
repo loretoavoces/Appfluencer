@@ -18,15 +18,14 @@ const influSchema = new Schema({
         type: String,
         require: true
     }, 
-    agency: {
-        type: String,
-        enum: ["Go Talents", "Soy Olivia", "Miranda Talents", "Pop Cont", "Espectalium", "In Management Agency"]
-    },
+    agency: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Agency'
+    }],
     description:  {
         type: String,
         require: true
     },
-
 }, {
     timestamps: true
 })

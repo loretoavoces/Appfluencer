@@ -20,6 +20,9 @@ const userSchema = new Schema(
             default: 'USER',
             require: true,
         },
+    favourites: {
+        type: [String]
+    },
     },
     {
       timestamps: true

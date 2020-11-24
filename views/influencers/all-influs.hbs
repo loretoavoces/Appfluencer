@@ -1,6 +1,9 @@
 <div class="container">
 
     <h2>Nuestras Influencers</h2>
+    {{#if isAdmin}}
+    <a href="/influencer/crear-influencer" class="btn btn-dark btn-sm">Crear influencer</a>
+    {{/if}}
 
     <br>
 
@@ -20,7 +23,7 @@
                     <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
                     <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
 
-                     {{/if}}
+                    {{/if}}
 
                 </div>
             </div>
@@ -28,12 +31,4 @@
 
         {{/each}}
     </div>
-
-
-
-    {{#if isAdmin}}
-    <a href="/influencer/crear-influencer" class="btn btn-dark btn-sm">Crear influencer</a>
-    {{/if}}
-
-
 </div>
