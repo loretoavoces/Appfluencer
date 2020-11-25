@@ -4,22 +4,19 @@
         <div class="col-4">
             <img src="{{image}}">
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-12 col-md-6 col-lg-6">
             <h3>{{name}}</h3>
             <p>{{description}}</p>
             <p><strong>Instagram: <a class="text-dark" href="{{instagram}}">{{name}}</a></strong> | <strong>Followers:
                 </strong> {{followers}}</p>
 
-
-
             <form action="/influencer/favorita/{{id}}" method="POST">
-            <button type="submit" class="btn text-white">Añadir a favoritas</button>
+                <button type="submit" class="btn btn-sm text-white">Añadir a favoritas</button>
             </form>
-
-
+            
             <hr>
 
-            <a href="/influencer" class="btn text-white">Volver</a>
+            <a href="/influencer" class="btn btn-sm text-white">Volver</a>
             {{#if isAdmin}}
             <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white">Eliminar</a>
             <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
@@ -27,5 +24,4 @@
 
         </div>
     </div>
-
 </div>

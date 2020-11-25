@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const agencySchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     location: {                 
         type: {
@@ -14,7 +14,7 @@ const agencySchema = new Schema({
     },
     street:  {
         type: String,
-        require: true
+        required: true
     },
     influencer: [{
         type: Schema.Types.ObjectId,

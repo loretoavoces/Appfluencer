@@ -1,21 +1,17 @@
-
 const express = require("express")
 const router = express.Router()
 const passport = require("passport")
 
 const User = require("../models/user.model")
 
-
 const bcrypt = require("bcryptjs")
 const bcryptSalt = 10
 
 
-
-// Registrase
-
+//Sign up get
 router.get("/registro", (req, res) => res.render("auth/signup"))
 
-
+//Sign up post
 router.post("/registro", (req, res, next) => {
 
     const { username, password } = req.body
@@ -44,12 +40,10 @@ router.post("/registro", (req, res, next) => {
         .catch(error => next(error))
 })
 
-
-//Iniciar Sesión 
-
+//Login get
 router.get('/inicio-sesion', (req, res) => res.render('auth/login'))
 
-
+//Login post
 router.post("/inicio-sesion", passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/registro",
@@ -57,7 +51,7 @@ router.post("/inicio-sesion", passport.authenticate("local", {
     passReqToCallback: true
 }))
 
-// Cerrar sesión
+//Logout
 router.get('/cerrar-sesion', (req, res) => {
     req.logout()
     res.redirect("/")

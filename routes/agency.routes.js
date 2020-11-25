@@ -6,8 +6,7 @@ const Agency = require('./../models/agency.model')
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizada, no tienes permisos' })
 
-//Mostrar todas las influencers
- 
+//All influencers
 router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => {
 
     Agency
@@ -20,6 +19,5 @@ router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) =>
         .catch(err => console.log(err))
     
 })
-
 
 module.exports = router

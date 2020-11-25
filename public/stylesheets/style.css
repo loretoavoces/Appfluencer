@@ -10,6 +10,20 @@ img {
   height: 400px;
   object-fit: cover; }
 
+.btn {
+  background-color: black; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+  padding-top: 50px;
+  font-weight: bold; }
+
+h6 {
+  font-weight: bold; }
+
 .navbar {
   margin-bottom: 50px; }
 
@@ -19,9 +33,6 @@ nav.navbar {
   font-size: 18px;
   padding-right: 30px; }
 
-.btn {
-  background-color: black; }
-
 .logo {
   font-size: 28px;
   font-weight: bold;
@@ -30,16 +41,21 @@ nav.navbar {
 #agencyMap {
   height: 500px; }
 
-h1, h2, h3, h4 {
-  font-weight: 100;
-  padding-top: 50px;
-  font-weight: bold; }
-
-h6 {
-  font-weight: bold; }
-
 .card {
   margin: 30px 0;
   text-align: center; }
+
+.index {
+  margin-top: 200px;
+  text-align: justify; }
+
+.img-index {
+  width: 100%; }
+
+.custom-toggler.navbar-toggler {
+  border-color: white; }
+
+.custom-toggler.navbar-toggler-icon {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

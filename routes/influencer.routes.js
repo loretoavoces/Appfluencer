@@ -10,14 +10,11 @@ const Agency = require('./../models/agency.model')
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizada, no tienes permisos' })
 
-
-
-//Mostrar todas las influencers
- 
+//Show all influencers
 router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => {
 
     Influ
-        .find()
+        .find({}, {name: 2, image: 3})
         .then(allInflus => res.render('influencers/all-influs', {
             allInflus,
                 user: req.user,
@@ -26,9 +23,7 @@ router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) =>
         .catch (err => console.log (err))
 })
 
-
-//Crear nueva influencer
-
+//New influencer get
 router.get('/crear-influencer', (req, res) => {
 
     Agency
@@ -38,6 +33,7 @@ router.get('/crear-influencer', (req, res) => {
   
 })
 
+//New influencer post
 router.post('/crear', CDNupload.single('imageFile'), (req, res) => {
 
     const { name, instagram, followers, agency, description } = req.body
@@ -51,9 +47,7 @@ router.post('/crear', CDNupload.single('imageFile'), (req, res) => {
 
 })
 
-
-//Editar influencer
-
+//Edit influencer get
 router.get('/editar-influencer', (req, res) => {
 
     const promiseInflu = Influ.findById(req.query.id).populate('agency')
@@ -67,6 +61,7 @@ router.get('/editar-influencer', (req, res) => {
         .catch(err => console.log(err))     
 })
 
+//Edit influencer post
 router.post('/editar-influencer', (req, res) => {
 
     const influId = req.query.id
@@ -79,9 +74,7 @@ router.post('/editar-influencer', (req, res) => {
         .catch(err => console.log(err))   
 })
 
-
-//Eliminar influencer
-
+//Delete influencer
 router.get('/eliminar-influencer', (req, res) => {
 
 
@@ -94,10 +87,7 @@ router.get('/eliminar-influencer', (req, res) => {
 
 })
 
-
-
-//Detalle de cada influencer
-
+//Detail influencer
 router.get('/:id', (req, res) => {
 
     const influId = req.params.id
@@ -107,8 +97,5 @@ router.get('/:id', (req, res) => {
         .then(theInflu => res.render('influencers/details-influs', theInflu))
         .catch (err => console.log (err))
 })
-
-
-
 
 module.exports = router

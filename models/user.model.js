@@ -6,11 +6,11 @@ const userSchema = new Schema(
     username: {
         type: String,
         unique: true,
-        require: true
+        required: true
     },
     name: {
         type: String,
-        require: true
+        required: true
     },
     password: String,
     
@@ -18,7 +18,7 @@ const userSchema = new Schema(
         type: String,
             enum: ['ADMIN', 'USER'],
             default: 'USER',
-            require: true,
+            required: true,
         },
     favourites: [{
         type: Schema.Types.ObjectId,

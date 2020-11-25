@@ -4,21 +4,18 @@ const Schema = mongoose.Schema
 const influSchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     image:  {
         type: String,
-        // imageName: String,
-        // path: String,
-        // originalName: String
     },
     instagram: {
         type: String,
-        require: true
+        required: true
     },
     followers:  {
         type: String,
-        require: true
+        required: true
     }, 
     agency: [{
         type: Schema.Types.ObjectId,
@@ -26,7 +23,7 @@ const influSchema = new Schema({
     }],
     description:  {
         type: String,
-        require: true
+        required: true
     },
 }, {
     timestamps: true

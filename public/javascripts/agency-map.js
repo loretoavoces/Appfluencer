@@ -5,14 +5,12 @@ function initApp() {
     getPlacesFromAPI()
 }
 
-
 function drawMap() {
     mapInstance = new google.maps.Map(
         document.querySelector('#agencyMap'),
         { center: { lat: 40.437776, lng: -3.684804 }, zoom: 13, styles: mapStyles.retro }
     )
 }
-
 
 function getPlacesFromAPI() {
 
@@ -24,7 +22,6 @@ function getPlacesFromAPI() {
         })
         .catch(err => console.log(err))
 }
-
 
 function drawMarkers(agency) {
 
@@ -38,6 +35,4 @@ function drawMarkers(agency) {
             title: elm.name
         })
     })
-
-    // mapInstance.setCenter({ lat: agency[1].location.coordinates[0], lng: agency[1].location.coordinates[1] })
 }
