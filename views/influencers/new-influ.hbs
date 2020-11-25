@@ -6,7 +6,7 @@
 
             <h2>Crear nueva influencer</h2>
 
-            <form method="POST" action="/influencer/crear-influencer" enctype="multipart/form-data">
+            <form method="POST" action="/influencer/crear" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label>Nombre</label>
@@ -21,8 +21,13 @@
                     <input type="text" class="form-control" name="followers">
                 </div>
                 <div class="form-group">
-                    <label>Agencia</label>
-                    <input type="text" class="form-control" name="agency" placeholder="¡Introduce el ID de la Agencia!">
+                    <label for="agency-list">Agencia actual</label>
+                    <select name="agency" class="form-control" id="agency-list">
+                        <option>Seleccionar</option>
+                        {{#each allTheAgencies}}
+                        <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>

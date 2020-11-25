@@ -3,7 +3,7 @@ const router = express.Router()
 const CDNupload = require('./../configs/cdn-upload.config')
 
 const Influ = require('./../models/influ.model')
-
+const User = require('./../models/user.model')
 const Agency = require('./../models/agency.model')
 
 //Passport
@@ -18,12 +18,11 @@ router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) =>
 
     Influ
         .find()
-        .then(allInflus => { console.log (allInflus)
-            res.render('influencers/all-influs', {
+        .then(allInflus => res.render('influencers/all-influs', {
             allInflus,
                 user: req.user,
                 isAdmin: req.user.role.includes('ADMIN'),
-                isUser: req.user.role.includes('USER')})})
+                isUser: req.user.role.includes('USER')}))
         .catch (err => console.log (err))
 })
 
@@ -39,9 +38,9 @@ router.get('/crear-influencer', (req, res) => {
   
 })
 
-router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
+router.post('/crear', CDNupload.single('imageFile'), (req, res) => {
 
-    const { name, instagram, followers, agency, description} = req.body
+    const { name, instagram, followers, agency, description } = req.body
 
     const image = req.file.path
         
@@ -94,6 +93,30 @@ router.get('/eliminar-influencer', (req, res) => {
         .catch(err => console.log(err))
 
 })
+
+// //FAVORITAS
+
+
+//Guardar favoritas
+
+router.post('/favorita/:id', ensureAuthenticated, (req, res) => {
+   
+    User
+        
+        .findByIdAndUpdate(req.user._id, {$push: {favourites: req.params.id}}, {new:true})
+
+        .then(() => res.redirect('/perfil'))
+
+        .catch(err => console.log('Hubo un error,', err))
+})
+
+// //Borrar de favoritas
+
+
+
+
+
+
 
 
 //Detalle de cada influencer
