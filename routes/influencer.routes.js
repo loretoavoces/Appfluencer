@@ -105,7 +105,6 @@ router.get('/:id', (req, res) => {
     const influId = req.params.id
     
     Influ
-
         .findById(influId)
         .then(theInflu => res.render('influencers/details-influs', theInflu))
         .catch (err => console.log (err))
