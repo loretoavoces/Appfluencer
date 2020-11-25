@@ -1,67 +1,66 @@
 const express = require('express')
-const User = require('../models/user.model')
-const Influ = require('../models/influ.model')
+
 const router = express.Router()
 
-
-//Passport
+const User = require("../models/user.model")
+const Influ = require('../models/influ.model')
 
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizada, no tienes permisos' })
+
+
 
 // Base Endpoints
 router.get('/', (req, res) => res.render('index'))
 router.get('/mapa', (req, res) => res.render('agency-map'))
 
+
 //ADMIN Y USER ENTRAN AL PERFIL
-router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => res.render('profile', {
-    user: req.user,
-    isAdmin: req.user.role.includes('ADMIN'),
-    isUser: req.user.role.includes('USER'),
-    
-}))
-
-
-
-
-//FAVORITAS
-//vista favoritas
-
-router.get('/perfil/favoritas', ensureAuthenticated, (req, res) => {
-    
-    const userId = req.user.id
+router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => {
 
     User
-        .findById(userId)
-        .then(user => res.render('auth/favourites', user))
-        .catch(err => console.log(err))  
+
+        .findById(req.user._id)
+        .populate('favourites')
+        .then((favInflu) => res.render('profile', { favInflu, isAdmin: req.user.role.includes('ADMIN'), isUser: req.user.role.includes('USER')}))
+
+
+    .catch(error => next(error))
 })
 
 //Guardar favoritas
 
-router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
-
-    const influId = req.query.id
-
+router.post('/influencer/favorita/:id', ensureAuthenticated, (req, res) => {
+   
     User
         
-        .findById(influId)
-
-        .then(allFavsCreated => {
-
-            const favInflu = []
-            
-            allFavsCreated.forEach(elm => {
-                favInflu.push(Influ.findByIdAndUpdate(elm.influ, {$push:{influencer: elm._id}}))
-            })
-
-            return favInflu
-        })
+        .findByIdAndUpdate(req.user._id, {$push: {favourites: req.params.id}}, {new:true})
+        .then(() => res.redirect('/perfil'))
         .catch(err => console.log('Hubo un error,', err))
 })
 
-//Borrar de favoritas
+//Eliminar favoritas
 
+// router.post('/influencer/favorita/:id', ensureAuthenticated, (req, res) => {
+   
+//     User
+        
+//         .findByIdAndUpdate(req.user._id, {$pull: {favourites: req.params.id}}, {new:true})
+//         .then(() => res.redirect('/perfil'))
+//         .catch(err => console.log('Hubo un error,', err))
+// })
+
+
+
+
+
+// //ADMIN Y USER ENTRAN AL PERFIL
+// router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => res.render('profile', {
+//     user: req.user,
+//     isAdmin: req.user.role.includes('ADMIN'),
+//     isUser: req.user.role.includes('USER'),
+
+// }))
 
 
 

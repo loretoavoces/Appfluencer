@@ -3,7 +3,7 @@ const router = express.Router()
 const CDNupload = require('./../configs/cdn-upload.config')
 
 const Influ = require('./../models/influ.model')
-
+const User = require('./../models/user.model')
 const Agency = require('./../models/agency.model')
 
 //Passport
@@ -38,18 +38,14 @@ router.get('/crear-influencer', (req, res) => {
   
 })
 
-router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
+router.post('/crear', CDNupload.single('imageFile'), (req, res) => {
 
-    const { name, instagram, followers, agency, description, imageFile } = req.body
+    const { name, instagram, followers, agency, description } = req.body
 
-    const imgFile = {
-        imageName: req.body.imageName,
-        path: req.file.path,
-        originalName: req.file.originalname
-    }
-
+    const image = req.file.path
+        
     Influ
-        .create({ name, instagram, followers, description, imageFile: imgFile, agency_id: agency } )
+        .create({ name, instagram, followers, description, image, agency } )
         .then(() => res.redirect('/influencer'))
         .catch(err => console.log(err))
 
@@ -60,13 +56,14 @@ router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
 
 router.get('/editar-influencer', (req, res) => {
 
-    const agencyPromise = Agency.findById(req.query.id)
-
-    const influPromise = Influ.find()
+    const promiseInflu = Influ.findById(req.query.id).populate('agency')
     
-    Promise.all([agencyPromise, influPromise])
+    const promiseAgency = Agency.find()
+        
+    Promise.all([promiseInflu, promiseAgency])
+
         .then(results =>
-             res.render('influencers/edit-influ', { agency: results[0], influ: results[1] }))
+            res.render('influencers/edit-influ', {influ: results [0], agencies: results [1]}))
         .catch(err => console.log(err))     
 })
 
@@ -96,6 +93,7 @@ router.get('/eliminar-influencer', (req, res) => {
         .catch(err => console.log(err))
 
 })
+
 
 
 //Detalle de cada influencer

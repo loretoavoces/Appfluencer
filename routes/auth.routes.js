@@ -5,8 +5,10 @@ const passport = require("passport")
 
 const User = require("../models/user.model")
 
+
 const bcrypt = require("bcryptjs")
 const bcryptSalt = 10
+
 
 
 // Registrase
@@ -60,7 +62,6 @@ router.get('/cerrar-sesion', (req, res) => {
     req.logout()
     res.redirect("/")
 })
-
-
+ 
 
 module.exports = router

@@ -20,11 +20,11 @@ const userSchema = new Schema(
             default: 'USER',
             require: true,
         },
-    favourites: {
-        type: [String]
-    },
-    },
-    {
+    favourites: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Influ'
+    }]
+    }, {
       timestamps: true
     }
 );
