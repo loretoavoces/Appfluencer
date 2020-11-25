@@ -94,29 +94,6 @@ router.get('/eliminar-influencer', (req, res) => {
 
 })
 
-// //FAVORITAS
-
-
-//Guardar favoritas
-
-router.post('/favorita/:id', ensureAuthenticated, (req, res) => {
-   
-    User
-        
-        .findByIdAndUpdate(req.user._id, {$push: {favourites: req.params.id}}, {new:true})
-
-        .then(() => res.redirect('/perfil'))
-
-        .catch(err => console.log('Hubo un error,', err))
-})
-
-// //Borrar de favoritas
-
-
-
-
-
-
 
 
 //Detalle de cada influencer
