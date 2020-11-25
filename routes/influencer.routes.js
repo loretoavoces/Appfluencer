@@ -18,11 +18,12 @@ router.get('/', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) =>
 
     Influ
         .find()
-        .then(allInflus => res.render('influencers/all-influs', {
+        .then(allInflus => { console.log (allInflus)
+            res.render('influencers/all-influs', {
             allInflus,
                 user: req.user,
                 isAdmin: req.user.role.includes('ADMIN'),
-                isUser: req.user.role.includes('USER')}))
+                isUser: req.user.role.includes('USER')})})
         .catch (err => console.log (err))
 })
 
@@ -40,16 +41,12 @@ router.get('/crear-influencer', (req, res) => {
 
 router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
 
-    const { name, instagram, followers, agency, description, imageFile } = req.body
+    const { name, instagram, followers, agency, description} = req.body
 
-    const imgFile = {
-        imageName: req.body.imageName,
-        path: req.file.path,
-        originalName: req.file.originalname
-    }
-
+    const image = req.file.path
+        
     Influ
-        .create({ name, instagram, followers, description, imageFile: imgFile, agency_id: agency } )
+        .create({ name, instagram, followers, description, image, agency } )
         .then(() => res.redirect('/influencer'))
         .catch(err => console.log(err))
 
@@ -60,13 +57,14 @@ router.post('/crear-influencer', CDNupload.single('imageFile'), (req, res) => {
 
 router.get('/editar-influencer', (req, res) => {
 
-    const agencyPromise = Agency.findById(req.query.id)
-
-    const influPromise = Influ.find()
+    const promiseInflu = Influ.findById(req.query.id).populate('agency')
     
-    Promise.all([agencyPromise, influPromise])
+    const promiseAgency = Agency.find()
+        
+    Promise.all([promiseInflu, promiseAgency])
+
         .then(results =>
-             res.render('influencers/edit-influ', { agency: results[0], influ: results[1] }))
+            res.render('influencers/edit-influ', {influ: results [0], agencies: results [1]}))
         .catch(err => console.log(err))     
 })
 

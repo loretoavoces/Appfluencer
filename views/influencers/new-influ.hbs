@@ -6,7 +6,7 @@
 
             <h2>Crear nueva influencer</h2>
 
-            <form method="POST" action="/influencer/crear-influencer">
+            <form method="POST" action="/influencer/crear-influencer" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label>Nombre</label>
@@ -30,8 +30,8 @@
                 </div>
                  <div class="form-group">
                     <div class="custom-file">
-                    <label>Imagen</label>
-                    <input type="file" class="custom-file-input" name="image" id="imageFile">
+                         <input type="file" class="custom-file-input" name="imageFile" id="imageFile">
+                    <label class="custom-file-label" for="imageFile">Imagen</label>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-dark btn-block">Crear</button>

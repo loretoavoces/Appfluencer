@@ -23,44 +23,43 @@ router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, r
 
 
 
+// //FAVORITAS
+// //vista favoritas
 
-//FAVORITAS
-//vista favoritas
-
-router.get('/perfil/favoritas', ensureAuthenticated, (req, res) => {
+// router.get('/perfil/favoritas', ensureAuthenticated, (req, res) => {
     
-    const userId = req.user.id
+//     const userId = req.user.id
 
-    User
-        .findById(userId)
-        .then(user => res.render('auth/favourites', user))
-        .catch(err => console.log(err))  
-})
+//     User
+//         .findById(userId)
+//         .then(user => res.render('auth/favourites', user))
+//         .catch(err => console.log(err))  
+// })
 
-//Guardar favoritas
+// //Guardar favoritas
 
-router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
+// router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
 
-    const influId = req.query.id
+//     const influId = req.query.id
 
-    User
+//     User
         
-        .findById(influId)
+//         .findById(influId)
 
-        .then(allFavsCreated => {
+//         .then(allFavsCreated => {
 
-            const favInflu = []
+//             const favInflu = []
             
-            allFavsCreated.forEach(elm => {
-                favInflu.push(Influ.findByIdAndUpdate(elm.influ, {$push:{influencer: elm._id}}))
-            })
+//             allFavsCreated.forEach(elm => {
+//                 favInflu.push(Influ.findByIdAndUpdate(elm.influ, {$push:{influencer: elm._id}}))
+//             })
 
-            return favInflu
-        })
-        .catch(err => console.log('Hubo un error,', err))
-})
+//             return favInflu
+//         })
+//         .catch(err => console.log('Hubo un error,', err))
+// })
 
-//Borrar de favoritas
+// //Borrar de favoritas
 
 
 

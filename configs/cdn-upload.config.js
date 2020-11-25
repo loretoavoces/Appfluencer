@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'project2',
+        folder: 'appfluencer',
         allowed_formats: async (req, file) => "jpg,png",
     }
 })

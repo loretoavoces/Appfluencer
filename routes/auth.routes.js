@@ -4,9 +4,13 @@ const router = express.Router()
 const passport = require("passport")
 
 const User = require("../models/user.model")
+const Influ = require('../models/influ.model')
 
 const bcrypt = require("bcryptjs")
 const bcryptSalt = 10
+
+const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizada, no tienes permisos' })
 
 
 // Registrase
@@ -60,6 +64,43 @@ router.get('/cerrar-sesion', (req, res) => {
     req.logout()
     res.redirect("/")
 })
+
+//FAVORITAS
+
+//vista favoritas
+
+router.get('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
+    
+    const userId = req.user.id
+
+    User
+        .findById(userId)
+        .then(user => res.render('auth/favourites', user))
+        .catch(err => console.log(err))  
+})
+
+//Guardar favoritas
+
+// router.post('/perfil/favoritas/:id', ensureAuthenticated, (req, res) => {
+
+//     const influId = req.query.id
+
+//     User
+        
+//         .findById(influId)
+
+//         .then(allFavsCreated => {
+
+//             const favInflu = []
+            
+//             allFavsCreated.forEach(elm => {
+//                 favInflu.push(Influ.findByIdAndUpdate(elm.influ, {$push:{influencer: elm._id}}))
+//             })
+
+//             return favInflu
+//         })
+//         .catch(err => console.log('Hubo un error,', err))
+// })
 
 
 
