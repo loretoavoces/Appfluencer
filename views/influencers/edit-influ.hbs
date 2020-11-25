@@ -6,27 +6,30 @@
 
             <h2>Editar</h2>
 
-            <form method="POST" action="/influencer/editar-influencer?id={{id}}">
-
+            <form method="POST" action="/influencer/editar-influencer?id={{influ._id}}">
+               
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" name="name" value="{{name}}">
+                    <input type="text" class="form-control" name="name" value="{{influ.name}}">
                 </div>
                 <div class="form-group">
                     <label>Instagram</label>
-                    <input type="text" class="form-control" name="instagram" value="{{instagram}}">
+                    <input type="text" class="form-control" name="instagram" value="{{influ.instagram}}">
                 </div>
                 <div class="form-group">
                     <label>Followers</label>
-                    <input type="text" class="form-control" name="followers" value="{{followers}}">
-                </div>
-                <div class="form-group">
-                    <label>Agencia</label>
-                    <input type="text" class="form-control" name="agency" value="{{agency}}">
+                    <input type="text" class="form-control" name="followers" value="{{influ.followers}}">
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <input type="text" class="form-control" name="description" value="{{description}}">
+                    <input type="text" class="form-control" name="description" value="{{influ.description}}">
+                </div>
+               
+                <div class="form-group">
+                    <label>Agencia</label>
+                     {{#each agency}}
+                    <input type="text" class="form-control" name="agency" value="{{agency._id}}">
+                     {{/each}}
                 </div>
                 <button type="submit" class="btn btn-dark btn-block">Editar</button>
             </form>
