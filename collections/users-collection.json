@@ -1,2 +1,0 @@
-{"_id":{"$oid":"5fba3287d0fb352c7b8114d7"},"role":"ADMIN","username":"loretoavoces","name":"Loreto","password":"$2a$10$iRD08iqBqor49DzqvUdnB.6DTyBioPu1ZNnvZ0SlZ3p/afJ2MxVv2","createdAt":{"$date":"2020-11-22T09:42:31.891Z"},"updatedAt":{"$date":"2020-11-22T09:42:31.891Z"},"__v":0}
-{"_id":{"$oid":"5fbbe5f38ce119c710ccda3f"},"role":"USER","username":"Maria","password":"$2a$10$DrzD9rml08H4UBcBap2k4.OcA.fJqDq42POvPiz74C7Jycr6cv.GW","createdAt":{"$date":"2020-11-23T16:40:19.038Z"},"updatedAt":{"$date":"2020-11-23T16:40:19.038Z"},"__v":0}

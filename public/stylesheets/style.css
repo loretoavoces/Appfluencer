@@ -1,10 +1,11 @@
 body {
   font-family: sans-serif;
   font-family: 'Montserrat', sans-serif;
-  color: black; }
+  color: black;
+  font-size: 18px; }
 
 img {
-  width: 70%; }
+  width: 80%; }
 
 .img-card {
   height: 400px;
@@ -55,7 +56,26 @@ nav.navbar {
   bottom: 0;
   width: 100%;
   background-color: black;
-  color: white; }
+  color: white;
+  margin-top: 20px; }
+
+.all-influs {
+  margin-bottom: 80px; }
+
+.influ-index {
+  margin-top: 100px; }
+
+.logo-agency {
+  width: 100px;
+  margin-top: 20px; }
+
+.detail-agency {
+  color: black;
+  font-weight: bold; }
+
+.detail-agency:hover {
+  text-decoration: none;
+  color: #ed564b; }
 
 .img-carousel {
   width: 200px;
