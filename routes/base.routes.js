@@ -58,13 +58,4 @@ router.get('/influencer/favorita/borrar/:id', ensureAuthenticated, (req, res) =>
 
 
 
-// //ADMIN Y USER ENTRAN AL PERFIL
-// router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => res.render('profile', {
-//     user: req.user,
-//     isAdmin: req.user.role.includes('ADMIN'),
-//     isUser: req.user.role.includes('USER'),
-
-// }))
-
-
 module.exports = router

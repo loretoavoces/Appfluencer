@@ -6,6 +6,9 @@ const agencySchema = new Schema({
         type: String,
         required: true
     },
+    logo: {
+        type: String
+    },
     location: {                 
         type: {
             type: String
