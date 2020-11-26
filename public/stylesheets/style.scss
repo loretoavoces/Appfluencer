@@ -61,7 +61,7 @@ nav.navbar{
 
 //Index
 .index{
-  margin-top: 200px;
+  // margin-top: 200px;
   text-align: justify;
 }
 
@@ -76,4 +76,15 @@ nav.navbar{
   width: 100%;
   background-color: black;
   color: white;
+}
+
+.img-carousel {
+
+  width: 200px;
+  height: 250px;
+}
+
+.glide__slides {
+  margin-top: 60px;
+  margin-bottom: 50px;
 }

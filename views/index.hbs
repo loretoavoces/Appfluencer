@@ -1,4 +1,17 @@
 <div class="container index">
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                {{#each influ}}
+                <li class="glide__slide">
+                    <img class="img-carousel" src="{{image}}">
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 col-lg-4">
             <img class="img-index" src="./../images/fondo-index">
@@ -17,5 +30,32 @@
     </div>
 </div>
 
-{{>footer this}}
+{{!-- {{>footer this}} --}}
 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"
+    integrity="sha512-BXASbMmKLu+RC5TDnkupyhvrjiOQXILh/5zgIS8k5JAC71a73lNweVEg/X+9XJQ7GK22PH9WpztY3zqrji+xrQ=="
+    crossorigin="anonymous"></script>
+
+
+<script>
+
+    new Glide('.glide', {
+
+        type: 'carousel',
+        startAt: 3,
+        perView: 5,
+        autoplay: 3500,
+        hoverpause: true,
+        breakpoints: {
+            1024: {
+                perView: 2
+            },
+            600: {
+                perView: 2
+            }
+        }
+    }).mount()
+    
+</script>

@@ -2,13 +2,23 @@ const express = require('express')
 const router = express.Router()
 
 const User = require("../models/user.model")
+const Influ = require ("../models/influ.model")
 
 //Passport
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next(): res.render('auth/login', {errorMsg: "Desautorizada, inicia sesión"})
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizada, no tienes permisos' })
 
 //Base Endpoints
-router.get('/', (req, res) => res.render('index'))
+router.get('/', (req, res) => {
+
+    Influ
+
+        .find()
+        .then((influ) => res.render('index', { influ }))
+        .catch(error => next(error))
+})
+
+
 router.get('/mapa', (req, res) => res.render('agency-map'))
 
 

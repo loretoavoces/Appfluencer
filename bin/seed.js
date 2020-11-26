@@ -1,4 +1,4 @@
-// // ////SEED USER
+// //SEED USER
 
 // const mongoose = require('mongoose')
 // const User = require('../models/user.model')
@@ -20,7 +20,7 @@
 //         name: "Loreto",
 //         password: hashPass1,
 //         role: "ADMIN"
-//     }
+//     },
 
 // ]
 
