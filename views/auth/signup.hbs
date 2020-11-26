@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-6">
             <h1>Registro de usuaria</h1>
             <form method="POST" action="/registro">
                 <div class='form-group'>
@@ -14,10 +14,12 @@
                 </div>
                 <button type='submit' class='btn btn-dark btn-block'>Registrarme</button>
                 {{#if errorMsg}}
-                <p style="margin-top: 10px;background: red; color: white; text-align: center; padding: 10px">
+                <p style="margin-top: 10px;background: #ed564b; color: white; text-align: center; padding: 10px">
                     {{errorMsg}}</p>
                 {{/if}}
             </form>
         </div>
     </div>
 </div>
+
+{{>footer this}}

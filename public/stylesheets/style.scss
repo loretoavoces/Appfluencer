@@ -3,10 +3,11 @@ body {
   font-family: sans-serif;
   font-family: 'Montserrat', sans-serif;
   color: black;
+  font-size: 18px;
 }
 
 img {
-  width: 70%;
+  width: 80%;
 }
 
 .img-card {
@@ -48,6 +49,10 @@ nav.navbar{
   background-color: white; 
 }
 
+// .navbar-toggler-icon {
+//   background-image: url("https://cdn2.iconfinder.com/data/icons/simple-circular-icons-filled/78/Hamburger_Menu_Filled-512.png");
+// }
+
 
 //Map
 #agencyMap{
@@ -76,4 +81,31 @@ nav.navbar{
   width: 100%;
   background-color: black;
   color: white;
+  margin-top: 20px;
+}
+
+//All influs
+
+.all-influs {
+  margin-bottom: 80px; 
+}
+
+//Details influs
+
+.influ-index{
+  margin-top: 100px;
+}
+
+.logo-agency {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.detail-agency {
+  color: black;
+  font-weight: bold;
+}
+.detail-agency:hover {
+  text-decoration: none;
+  color: #ed564b;
 }

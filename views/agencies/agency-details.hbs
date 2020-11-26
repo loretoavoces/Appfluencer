@@ -1,23 +1,26 @@
 <div class="container coasters-index">
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-4">
-            <img src="{{logo}}">
+        <div class="col-2">
+            <img class="logo-agency" src="{{logo}}">
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="col-10">
             <h3>{{name}}</h3>
             <h5>{{street}}</h5>
             <hr>
-            <div class="col-sm-3 col-md-3 col-lg-3">
-                {{#each influencer}}
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top img-card" src="{{image}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{name}}</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-                {{/each}}
         </div>
+        {{#each influencer}}
+        <div class="col-sm-4 col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-card" src="{{image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>
+
+{{>footer this}}
