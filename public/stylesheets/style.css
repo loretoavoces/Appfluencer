@@ -24,19 +24,18 @@ h4 {
 h6 {
   font-weight: bold; }
 
-.navbar {
-  margin-bottom: 50px; }
-
 nav.navbar {
   background-color: black;
-  height: 80px;
   font-size: 18px;
-  padding-right: 30px; }
+  padding-right: 30px;
+  color: white; }
 
 .logo {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 25px;
   margin-left: 20px; }
+
+.navbar-toggler-icon {
+  background-color: white; }
 
 #agencyMap {
   height: 500px; }
@@ -52,10 +51,11 @@ nav.navbar {
 .img-index {
   width: 100%; }
 
-.custom-toggler.navbar-toggler {
-  border-color: white; }
-
-.custom-toggler.navbar-toggler-icon {
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
   color: white; }
 
 /*# sourceMappingURL=style.css.map */
