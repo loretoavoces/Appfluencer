@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ">
 
     <h2>Nuestras Influencers</h2>
     {{#if isAdmin}}
@@ -9,26 +9,15 @@
 
     <div class="row justify-content-center align-items-center">
         {{#each allInflus}}
-
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
-                        alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text"></p>
+            {{>cardPartial this}}
+            {{#if ../isAdmin}}
 
-                    {{#if ../isAdmin}}
+            <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
+            <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
 
-                    <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
-                    <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
-
-                    {{/if}}
-
-                </div>
-            </div>
+            {{/if}}
         </div>
-
         {{/each}}
     </div>
 </div>

@@ -1,4 +1,6 @@
 require('dotenv').config()
+const hbs = require('hbs')
+const path = require('path')
 
 // Database
 require('./configs/mongoose.config')
@@ -19,5 +21,11 @@ require('./configs/locals.config')(app)
 
 // Routes index
 require('./routes')(app)
+
+//Partials
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, 'views'))
+hbs.registerPartials(`${__dirname}/views/partials`)
+app.use(express.static(path.join(__dirname, 'public')))
 
 module.exports = app

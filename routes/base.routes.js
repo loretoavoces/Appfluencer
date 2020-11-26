@@ -11,14 +11,16 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 router.get('/', (req, res) => res.render('index'))
 router.get('/mapa', (req, res) => res.render('agency-map'))
 
-//Admin and User enter in profile
+
+//Favourites
+//Admin and User enter in profile 
 router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, res) => {
 
     User
 
         .findById(req.user._id)
         .populate('favourites')
-        .then((favInflu) => res.render('profile', { favInflu, isAdmin: req.user.role.includes('ADMIN'), isUser: req.user.role.includes('USER')}))
+        .then((user) => res.render('profile', { user, isAdmin: req.user.role.includes('ADMIN'), isUser: req.user.role.includes('USER')}))
 
 
     .catch(error => next(error))
@@ -29,22 +31,30 @@ router.get('/perfil', ensureAuthenticated, checkRole(['ADMIN', 'USER']), (req, r
 router.post('/influencer/favorita/:id', ensureAuthenticated, (req, res) => {
    
     User
-        
-        .findByIdAndUpdate(req.user._id, {$push: {favourites: req.params.id}}, {new:true})
-        .then(() => res.redirect('/perfil'))
+        .findById(req.user._id)
+        .then(user => {
+            if (user.favourites.includes(req.params.id)) {
+                res.redirect('/perfil')
+            } else {
+                return User.findByIdAndUpdate(user._id, { $push: { favourites: req.params.id } }, { new: true })
+                    
+                .then(() => {res.redirect('/perfil')})
+            }
+        })   
         .catch(err => console.log('Hubo un error,', err))
 })
 
-//Delete favourites
 
-// router.post('/influencer/favorita/:id', ensureAuthenticated, (req, res) => {
+// Delete favourites
+
+router.get('/influencer/favorita/borrar/:id', ensureAuthenticated, (req, res) => {
    
-//     User
+    User
         
-//         .findByIdAndUpdate(req.user._id, {$pull: {favourites: req.params.id}}, {new:true})
-//         .then(() => res.redirect('/perfil'))
-//         .catch(err => console.log('Hubo un error,', err))
-// })
+        .findByIdAndUpdate(req.user._id, {$pull: {favourites: req.params.id}}, {new:true})
+        .then(() => res.redirect('/perfil'))
+        .catch(err => console.log('Hubo un error,', err))
+})
 
 
 
