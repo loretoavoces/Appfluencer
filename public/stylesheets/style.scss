@@ -49,11 +49,6 @@ nav.navbar{
   background-color: white; 
 }
 
-// .navbar-toggler-icon {
-//   background-image: url("https://cdn2.iconfinder.com/data/icons/simple-circular-icons-filled/78/Hamburger_Menu_Filled-512.png");
-// }
-
-
 //Map
 #agencyMap{
   height: 500px;
@@ -63,15 +58,21 @@ nav.navbar{
   margin: 30px 0;
   text-align: center;
 }
+.map-contact {
+  margin-top: 60px;
+}
 
 //Index
 .index{
-  // margin-top: 200px;
   text-align: justify;
 }
 
-.img-index{
-  width: 100%;
+.info-index {
+  margin-top: 50px;
+}
+
+.influ-index {
+  margin-top: 100px;
 }
 
 //footer
@@ -85,15 +86,19 @@ nav.navbar{
 }
 
 //All influs
-
 .all-influs {
   margin-bottom: 80px; 
 }
 
 //Details influs
 
-.influ-index{
-  margin-top: 100px;
+.link-detail {
+  color: black; 
+}
+
+.link-detail:hover {
+  text-decoration: none;
+  color: #ed564b;
 }
 
 .logo-agency {
@@ -106,18 +111,31 @@ nav.navbar{
   font-weight: bold;
 }
 
-.img-carousel {
+.detail-agency:hover {
+  text-decoration: none;
+  color: #ed564b;
+}
 
+//Carousel
+
+.img-carousel {
   width: 200px;
   height: 250px;
 }
 
 .glide__slides {
-  margin-top: 60px;
+  margin-top: 80px;
   margin-bottom: 50px;
 }
 
-.detail-agency:hover {
-  text-decoration: none;
-  color: #ed564b;
+//Form sig nup and login
+
+.form-login{
+  margin-top: 150px;
+}
+
+//Form edit and new
+
+.new-form {
+  margin-top: 50px;
 }

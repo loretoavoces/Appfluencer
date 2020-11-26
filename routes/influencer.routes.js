@@ -57,7 +57,7 @@ router.get('/editar-influencer', (req, res) => {
     Promise.all([promiseInflu, promiseAgency])
 
         .then(results =>
-            res.render('influencers/edit-influ', {influ: results [0], agencies: results [1]}))
+            res.render('influencers/edit-influ', { influ: results[0], agencies: results[1] }))
         .catch(err => console.log(err))     
 })
 
@@ -94,6 +94,7 @@ router.get('/:id', (req, res) => {
     
     Influ
         .findById(influId)
+        .populate('agency')
         .then(theInflu => res.render('influencers/details-influs', theInflu))
         .catch (err => console.log (err))
 })

@@ -7,8 +7,11 @@
         <div class="col-sm-12 col-md-6 col-lg-6">
             <h3>{{name}}</h3>
             <p>{{description}}</p>
-            <p><strong>Instagram: <a class="text-dark" href="{{instagram}}">{{name}}</a></strong> | <strong>Followers:
+            <p><strong>Instagram: <a class="link-detail" href="{{instagram}}">{{name}}</a></strong> | <strong>Followers:
                 </strong> {{followers}}</p>
+                {{#each agency}}
+            <p><strong>Agencia: <a class="link-detail" href="/influencer/mapa/{{id}}">{{name}}</p></a></strong>
+            {{/each}}
 
             <form action="/influencer/favorita/{{id}}" method="POST">
                 <button type="submit" class="btn btn-sm text-white">Añadir a favoritas</button>
@@ -25,3 +28,5 @@
         </div>
     </div>
 </div>
+
+{{>footer this}}

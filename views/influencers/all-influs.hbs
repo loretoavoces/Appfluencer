@@ -11,19 +11,20 @@
         {{#each allInflus}}
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card" style="width: 18rem;">
-            <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}" alt="Card image cap"></a>
-            <div class="card-body">
-                <h5 class="card-title">{{name}}</h5>
-                <p class="card-text"></p>
-    
-            {{#if ../isAdmin}}
+                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
+                        alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text"></p>
 
-            <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
-            <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
+                    {{#if ../isAdmin}}
 
-            {{/if}}
+                    <a href="/influencer/editar-influencer?id={{id}}" class="btn text-white btn-sm">Editar</a>
+                    <a href="/influencer/eliminar-influencer?id={{id}}" class="btn text-white btn-sm">Eliminar</a>
+
+                    {{/if}}
+                </div>
             </div>
-        </div>
         </div>
         {{/each}}
     </div>

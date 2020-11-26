@@ -45,11 +45,17 @@ nav.navbar {
   margin: 30px 0;
   text-align: center; }
 
+.map-contact {
+  margin-top: 60px; }
+
 .index {
   text-align: justify; }
 
-.img-index {
-  width: 100%; }
+.info-index {
+  margin-top: 50px; }
+
+.influ-index {
+  margin-top: 100px; }
 
 .footer {
   position: absolute;
@@ -62,8 +68,12 @@ nav.navbar {
 .all-influs {
   margin-bottom: 80px; }
 
-.influ-index {
-  margin-top: 100px; }
+.link-detail {
+  color: black; }
+
+.link-detail:hover {
+  text-decoration: none;
+  color: #ed564b; }
 
 .logo-agency {
   width: 100px;
@@ -82,7 +92,13 @@ nav.navbar {
   height: 250px; }
 
 .glide__slides {
-  margin-top: 60px;
+  margin-top: 80px;
   margin-bottom: 50px; }
+
+.form-login {
+  margin-top: 150px; }
+
+.new-form {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */

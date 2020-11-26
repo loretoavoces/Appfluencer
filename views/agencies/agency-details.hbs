@@ -6,13 +6,14 @@
         </div>
         <div class="col-10">
             <h3>{{name}}</h3>
-            <h5>{{street}}</h5>
+            <h6>{{street}}</h6>
             <hr>
+            <p>Influencers con las que colabora:</p>
         </div>
         {{#each influencer}}
         <div class="col-sm-4 col-md-6 col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top img-card" src="{{image}}" alt="Card image cap">
+                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text"></p>
