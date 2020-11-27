@@ -33,10 +33,16 @@ h4 {
   font-weight: 100;
   padding-top: 50px;
   font-weight: bold;
+  text-align: left;
+}
+
+h5 {
+  text-align: center;
 }
 
 h6 {
   font-weight: bold;
+  font-size: 15px;
 }
 
 //Navbar
@@ -109,6 +115,8 @@ nav.navbar{
 
 .link-detail {
   color: black; 
+  text-decoration: none;
+  color: #ed564b;
 }
 
 .link-detail:hover {
@@ -124,11 +132,16 @@ nav.navbar{
 .detail-agency {
   color: black;
   font-weight: bold;
+  color: #ed564b;
 }
 
 .detail-agency:hover {
   text-decoration: none;
   color: #ed564b;
+}
+
+.street-agency {
+  text-align: center;
 }
 
 //Profile
@@ -140,8 +153,8 @@ nav.navbar{
 //Carousel
 
 .img-carousel {
-  width: 200px;
-  height: 250px;
+  width: 180px;
+  height: 220px;
 }
 
 .glide__slides {
@@ -151,9 +164,9 @@ nav.navbar{
 
 //Form sig nup and login
 
-.form-login{
-  margin-top: 150px;
-}
+// .form-login{
+//   margin-top: 150px;
+// }
 
 //Form edit and new
 

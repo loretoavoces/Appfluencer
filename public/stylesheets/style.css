@@ -20,10 +20,15 @@ h3,
 h4 {
   font-weight: 100;
   padding-top: 50px;
-  font-weight: bold; }
+  font-weight: bold;
+  text-align: left; }
+
+h5 {
+  text-align: center; }
 
 h6 {
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 15px; }
 
 nav.navbar {
   background-color: black;
@@ -75,7 +80,9 @@ nav.navbar {
   margin-bottom: 80px; }
 
 .link-detail {
-  color: black; }
+  color: black;
+  text-decoration: none;
+  color: #ed564b; }
 
 .link-detail:hover {
   text-decoration: none;
@@ -87,25 +94,26 @@ nav.navbar {
 
 .detail-agency {
   color: black;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #ed564b; }
 
 .detail-agency:hover {
   text-decoration: none;
   color: #ed564b; }
 
+.street-agency {
+  text-align: center; }
+
 .profile-cont {
   margin-bottom: 30px; }
 
 .img-carousel {
-  width: 200px;
-  height: 250px; }
+  width: 180px;
+  height: 220px; }
 
 .glide__slides {
   margin-top: 80px;
   margin-bottom: 50px; }
-
-.form-login {
-  margin-top: 150px; }
 
 .new-form {
   margin-top: 20px; }
