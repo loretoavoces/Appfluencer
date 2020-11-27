@@ -11,15 +11,12 @@
             <p>Influencers con las que colabora:</p>
         </div>
         {{#each influencer}}
-        <div class="row justify-content-center align-items-center">
-            <div class="col-sm-12 col-md-4 col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
-                            alt="Card image cap"></a>
-                    <div class="card-body">
-                        <h5 class="card-title">{{name}}</h5>
-                        <p class="card-text"></p>
-                    </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
