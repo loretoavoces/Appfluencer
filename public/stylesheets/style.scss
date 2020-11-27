@@ -1,10 +1,17 @@
 //Generic
 body {
-  font-family: sans-serif;
   font-family: 'Montserrat', sans-serif;
   color: black;
   font-size: 18px;
+  text-align: justify;
 }
+
+// .col-sm-12 {
+//   width: 50%;
+//   position: relative;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
 img {
   width: 80%;
@@ -36,18 +43,21 @@ h6 {
 nav.navbar{
   background-color: black;
   font-size: 18px;
-  padding-right: 30px;
   color: white;
 }
 
 .logo {
   font-size: 25px;
-  margin-left: 20px
+  margin-left: 20px;
 }
 
+
 .navbar-toggler-icon {
-  background-color: white; 
+  background-image: url('./../images/white-navbar.jpg');
+  width: 50px;
+  height: 50px;
 }
+
 
 //Map
 #agencyMap{
@@ -60,11 +70,15 @@ nav.navbar{
 }
 .map-contact {
   margin-top: 60px;
+  margin-bottom: 100px;
+}
+.agency-index{
+  margin-bottom: 70px;
 }
 
 //Index
 .index{
-  text-align: justify;
+  margin-bottom: 100px;
 }
 
 .info-index {
@@ -73,12 +87,13 @@ nav.navbar{
 
 .influ-index {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 //footer
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   background-color: black;
   color: white;
@@ -116,6 +131,12 @@ nav.navbar{
   color: #ed564b;
 }
 
+//Profile
+
+.profile-cont {
+  margin-bottom: 30px;
+}
+
 //Carousel
 
 .img-carousel {
@@ -131,11 +152,11 @@ nav.navbar{
 //Form sig nup and login
 
 .form-login{
-  margin-top: 150px;
+  margin: 150px 0px 150px 0px;
 }
 
 //Form edit and new
 
 .new-form {
-  margin-top: 50px;
+  margin-top: 20px;
 }

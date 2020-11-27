@@ -1,8 +1,8 @@
 body {
-  font-family: sans-serif;
   font-family: 'Montserrat', sans-serif;
   color: black;
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: justify; }
 
 img {
   width: 80%; }
@@ -28,7 +28,6 @@ h6 {
 nav.navbar {
   background-color: black;
   font-size: 18px;
-  padding-right: 30px;
   color: white; }
 
 .logo {
@@ -36,7 +35,9 @@ nav.navbar {
   margin-left: 20px; }
 
 .navbar-toggler-icon {
-  background-color: white; }
+  background-image: url("./../images/white-navbar.jpg");
+  width: 50px;
+  height: 50px; }
 
 #agencyMap {
   height: 500px; }
@@ -46,20 +47,25 @@ nav.navbar {
   text-align: center; }
 
 .map-contact {
-  margin-top: 60px; }
+  margin-top: 60px;
+  margin-bottom: 100px; }
+
+.agency-index {
+  margin-bottom: 70px; }
 
 .index {
-  text-align: justify; }
+  margin-bottom: 100px; }
 
 .info-index {
   margin-top: 50px; }
 
 .influ-index {
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-bottom: 100px; }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   background-color: black;
   color: white;
@@ -87,6 +93,9 @@ nav.navbar {
   text-decoration: none;
   color: #ed564b; }
 
+.profile-cont {
+  margin-bottom: 30px; }
+
 .img-carousel {
   width: 200px;
   height: 250px; }
@@ -96,9 +105,9 @@ nav.navbar {
   margin-bottom: 50px; }
 
 .form-login {
-  margin-top: 150px; }
+  margin: 150px 0px 150px 0px; }
 
 .new-form {
-  margin-top: 50px; }
+  margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */

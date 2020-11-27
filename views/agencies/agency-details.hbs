@@ -1,22 +1,25 @@
-<div class="container coasters-index">
+<div class="container agency-index">
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-2">
+        <div class="col-sm-3 col-md-4 col-lg-2">
             <img class="logo-agency" src="{{logo}}">
         </div>
-        <div class="col-10">
+        <div class="col-sm-9 col-md-8 col-lg-10">
             <h3>{{name}}</h3>
             <h6>{{street}}</h6>
             <hr>
             <p>Influencers con las que colabora:</p>
         </div>
         {{#each influencer}}
-        <div class="col-sm-4 col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text"></p>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <a href="/influencer/{{id}}"><img class="card-img-top img-card" src="{{image}}"
+                            alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text"></p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -66,7 +66,7 @@ const influ = [
         image: "https://arc-photo-larazon.s3.amazonaws.com/eu-central-1-prod/public/EBKVU4UA2BFL7DHXELDJIVWLXA.jpg", 
         instagram: "https://www.instagram.com/gracyvillarreal/?hl=es",
         followers: "619k",
-        description: "Grace se ha formado en Teología y Hermenéutica en UOFN en Los Ángeles, ha estudiado fotografía en la escuela privada EFTI en Madrid. Para ella, la familia y la cultura son valores fundamentales en la formación del carácter y han sido algo clave en su vida a lo largo de los años; gracias a ello ha viajado a más de 17 países y ha vivido en cuatro países diferentes. No se ha limitado solo a eso en su carrera personal sino que tiene vocación por la ayuda social y ha sido voluntaria durante más de 10 año en ONGs. Aparte de viajes misioneros al continente asiático y Sudamérica, es una persona autodidacta curiosa y creativa. Gracias a ello, para Grace el emprendimiento era la única opción posible a la hora de encarar el éxito. Empezó con su marca personal en 2012 creando una comunidad en YouTube, Happysunnyflowers, de más de 850.000 seguidores y se lanzó a Instagram poco después dónde actualmente cuenta con una comunidad de 610.000 personas y es embajadora de mas de 10 marcas lifestyle del mercado. Además en 2017 se lanzó al mundo de la hostelería con Pic & Nic con un restaurante de sándwich gourmet que está en plena expansión. En 2019 creó, junto a su hermana Melissa Villarreal, la marca de moda y complementos TheVillaConcept."
+        description: "Grace se ha formado en Teología y Hermenéutica en UOFN en Los Ángeles, ha estudiado fotografía en la escuela privada EFTI en Madrid. Para ella, la familia y la cultura son valores fundamentales en la formación del carácter y han sido algo clave en su vida a lo largo de los años; gracias a ello ha viajado a más de 17 países y ha vivido en cuatro países diferentes. No se ha limitado solo a eso en su carrera personal sino que tiene vocación por la ayuda social y ha sido voluntaria durante más de 10 año en ONGs. Aparte de viajes misioneros al continente asiático y Sudamérica, es una persona autodidacta."
 
     },
     {
@@ -167,7 +167,7 @@ const agency = [
     },
     {
         name: "Pop Cont",
-        logo: "https://media.licdn.com/dms/image/C560BAQERV69RHPiKyQ/company-logo_200_200/0?e=2159024400&v=beta&t=nBg8RPNYL1u07ns5_QS412NIU0RD-tq5SMTxWakVkR0",
+        logo: "https://pbs.twimg.com/profile_images/904728660623708160/Hv2-OYOs_400x400.jpg",
         location: {
             type: "Point",
             coordinates: [40.422370, -3.708689]
