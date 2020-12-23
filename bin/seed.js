@@ -232,5 +232,3 @@ Agency
         mongoose.connection.close()
     })
     .catch(err => console.log('Hubo un error,', err))
-
-

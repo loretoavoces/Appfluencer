@@ -11,6 +11,10 @@ img {
   height: 400px;
   object-fit: cover; }
 
+.img-details {
+  padding-right: 0;
+  padding-left: 60px; }
+
 .btn {
   background-color: black; }
 
@@ -117,5 +121,9 @@ nav.navbar {
 
 .new-form {
   margin-top: 20px; }
+
+@media (max-width: 500px) {
+  body {
+    text-align: left; } }
 
 /*# sourceMappingURL=style.css.map */
