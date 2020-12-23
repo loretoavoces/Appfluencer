@@ -5,14 +5,6 @@ body {
   font-size: 18px;
   text-align: justify;
 }
-
-// .col-sm-12 {
-//   width: 50%;
-//   position: relative;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-
 img {
   width: 80%;
 }
@@ -24,11 +16,9 @@ img {
   padding-right: 0;
   padding-left: 60px;
 }
-
 .btn {
   background-color: black;
 }
-
 h1,
 h2,
 h3,
@@ -38,41 +28,32 @@ h4 {
   font-weight: bold;
   text-align: left;
 }
-
 h5 {
   text-align: center;
 }
-
 h6 {
   font-weight: bold;
   font-size: 15px;
 }
-
 //Navbar
 nav.navbar{
   background-color: black;
   font-size: 18px;
   color: white;
 }
-
 .logo {
   font-size: 25px;
   margin-left: 20px;
 }
-
-
 .navbar-toggler-icon {
   background-image: url('./../images/white-navbar.jpg');
   width: 50px;
   height: 50px;
 }
-
-
 //Map
 #agencyMap{
   height: 500px;
 }
-
 .card{
   margin: 30px 0;
   text-align: center;
@@ -84,22 +65,18 @@ nav.navbar{
 .agency-index{
   margin-bottom: 70px;
 }
-
 //Index
 .index{
   margin-bottom: 100px;
 }
-
 .info-index {
   margin-top: 50px;
 }
-
 .influ-index {
   margin-top: 100px;
   margin-bottom: 100px;
 }
-
-//footer
+//Footer
 .footer {
   position: fixed;
   bottom: 0px;
@@ -108,75 +85,58 @@ nav.navbar{
   color: white;
   margin-top: 20px;
 }
-
 //All influs
 .all-influs {
   margin-bottom: 80px; 
 }
-
 //Details influs
-
 .link-detail {
   color: black; 
   text-decoration: none;
   color: #ed564b;
 }
-
 .link-detail:hover {
   text-decoration: none;
   color: #ed564b;
 }
-
 .logo-agency {
   width: 100px;
   margin-top: 20px;
 }
-
 .detail-agency {
   color: black;
   font-weight: bold;
   color: #ed564b;
+  padding-left: 0;
 }
-
+.agency-list {
+  padding-left: 0;
+}
 .detail-agency:hover {
   text-decoration: none;
   color: #ed564b;
 }
-
 .street-agency {
   text-align: center;
 }
-
 //Profile
-
 .profile-cont {
   margin-bottom: 30px;
 }
-
 //Carousel
-
 .img-carousel {
   width: 180px;
   height: 220px;
 }
-
 .glide__slides {
   margin-top: 80px;
   margin-bottom: 50px;
 }
-
-//Form sig nup and login
-
-// .form-login{
-//   margin-top: 150px;
-// }
-
 //Form edit and new
-
 .new-form {
   margin-top: 20px;
+  margin-bottom: 150px;
 }
-
 @media (max-width: 500px) {
 
   body {

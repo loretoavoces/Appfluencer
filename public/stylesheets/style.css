@@ -99,7 +99,11 @@ nav.navbar {
 .detail-agency {
   color: black;
   font-weight: bold;
-  color: #ed564b; }
+  color: #ed564b;
+  padding-left: 0; }
+
+.agency-list {
+  padding-left: 0; }
 
 .detail-agency:hover {
   text-decoration: none;
@@ -120,7 +124,8 @@ nav.navbar {
   margin-bottom: 50px; }
 
 .new-form {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 150px; }
 
 @media (max-width: 500px) {
   body {
