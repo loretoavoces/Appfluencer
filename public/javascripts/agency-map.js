@@ -17,7 +17,6 @@ function getPlacesFromAPI() {
     axios
         .get('/api/agency')
         .then(response => {
-            console.log(response.data)
             drawMarkers(response.data)
         })
         .catch(err => console.log(err))

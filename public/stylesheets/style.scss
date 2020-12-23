@@ -16,10 +16,13 @@ body {
 img {
   width: 80%;
 }
-
 .img-card {
   height: 400px;
   object-fit: cover;
+}
+.img-details{
+  padding-right: 0;
+  padding-left: 60px;
 }
 
 .btn {
@@ -172,4 +175,12 @@ nav.navbar{
 
 .new-form {
   margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+
+  body {
+    text-align: left;
+  }
+
 }
