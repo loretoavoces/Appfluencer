@@ -24,8 +24,8 @@ _Appfluencer is an application designed to facilitate the search for all those c
 
 - Go to: https://appfluencer.herokuapp.com/
 - Login:
-Nombre de usuaria: usuaria |
-Contraeña: usuaria
+nombre de usuaria: usuaria |
+contraeña: usuaria
 
 
 
