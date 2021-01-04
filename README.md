@@ -1,24 +1,9 @@
-## Endpoints (Influencers.routes)
+## _Appfluencer
+_Appfluencer es una aplicación pensada para facilitar la búsqueda de todas aquellas empresas y responsables de Marketing que quieran trabajar con alguna de las influencers con las que tenemos la suerte de trabajar.
 
-METHOD PATH DESCRIPTION
 
-- Get / Muestra la página principal (index)
-- Get /influencer Muestra la página principal (index)
-- Get /influencer/crear-influencer Muestra la vista de “new”
-- Post /influencer/crear-influencer Guarda en la BBDD una nueva influencer
-- Get /influencer/editar-influencer Muestra la vista de “edit”
-- Post /influencer/editar-influencer Edita en la BBDD una influencer
-- Get /influencer/:id Elimina de la BBDD una influencer
-- Get /influencer/:endpoint Muestra la vista "details"
-- Get /influencer/mapa-agencias Muestra la vista "map"
+## Authors
+- Loreto Álvarez Voces
+- Natalia Fernández Peña
 
-## Endpoints (auth.routes)
 
-- Get /registro Muestra la vista "signup"
-- Post /registro Guarda en la BBDD una nueva usuaria
-- Get /inicio-sesión Muestra la vista de “login”
-- Post /inicio-sesión Mantiene a la usuaria logueada
-- Get /perfil Muestra la vista de “my-profile”
-- Get /cerrar-sesion Cierra sesión
-
-- Run `npm run dev` command on the root directory
