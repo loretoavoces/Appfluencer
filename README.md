@@ -15,8 +15,8 @@ _Appfluencer is an application designed to facilitate the search for all those c
 - MongoDB
 - Bootstrap 
 - Handlebars
-- CSS
-- HTML
+- CSS3
+- HTML5
 - Passport
 - Heroku
 
