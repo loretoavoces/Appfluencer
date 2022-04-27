@@ -1,31 +1,24 @@
 # _Appfluencer
 
 ## Description 
-_Appfluencer is an application designed to facilitate the search for all those companies and Marketing managers who want to work with one of the influencers with whom we are fortunate to work.
+Control panel of a store, controlling if you are an administrator, you can access it to perform different tasks. Complete CRUD of users, products and categories... 
+
 
 ## Authors
 * Loreto Álvarez Voces
-* Natalia Fernández Peña
 
 ## Technologies used 
 - JS
+- Angular
 - Node.js
 - Express.js
 - Mongoose
 - MongoDB
-- Bootstrap 
-- Handlebars
+- Bootstrap
+- Tailwind
 - CSS3
 - HTML5
 - Passport
-- Heroku
-
-## How to use
-
-- Go to: https://appfluencer.herokuapp.com/
-- Login:
-nombre de usuaria: usuaria |
-contraeña: usuaria
 
 
 
